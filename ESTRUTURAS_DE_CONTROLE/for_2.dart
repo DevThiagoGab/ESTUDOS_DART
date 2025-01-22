@@ -1,4 +1,5 @@
 // For in
+// For é indicado para quando tem uma quantidade certa de vezes que irá executar
 main() {
   // Método tradicional para percorrer a lista
   var notas = [8.9, 9.3, 10.0, 5.5];

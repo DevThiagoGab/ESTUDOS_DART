@@ -1,3 +1,4 @@
+// For é indicado para quando tem uma quantidade certa de vezes que irá executar
 main() {
   for (int a = 0; a <= 10; a++) {
     print("A = $a.");

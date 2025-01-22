@@ -1,3 +1,4 @@
+// For é indicado para quando tem uma quantidade certa de vezes que irá executar
 main() {
   Map<String, double> notas = {
     'Thiago Gabriel': 9.9,
