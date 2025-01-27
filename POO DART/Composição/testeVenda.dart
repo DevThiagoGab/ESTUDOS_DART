@@ -4,42 +4,91 @@ import './venda_item.dart';
 import './venda.dart';
 
 void main() {
-  var venda = Venda(
-      clientes: new Clientes(
-        nome: 'Thiago Gabriel', 
-        cpf: '123.456.789-10'),
-      itens: <VendaItem>[
-        VendaItem(
+  var vendas = [
+    Venda(
+        clientes: new Clientes(
+          nome: 'Thiago Gabriel', 
+          cpf: '123.456.789-10'),
+        itens: <VendaItem>[
+          VendaItem(
+              quantidadeDeItens: 10,
+              produto: Produto(
+                  codigoDoProduto: 1,
+                  nomeDoProduto: 'Caneta Bic',
+                  precoDoProduto: 3.00,
+                  descontoDoProduto: 0.5)),
+          VendaItem(
+              quantidadeDeItens: 2,
+              produto: Produto(
+                  codigoDoProduto: 2,
+                  nomeDoProduto: 'Caderno',
+                  precoDoProduto: 20.00,
+                  descontoDoProduto: 0.5)),
+          VendaItem(
+              quantidadeDeItens: 3,
+              produto: Produto(
+                  codigoDoProduto: 3,
+                  nomeDoProduto: 'Borracha',
+                  precoDoProduto: 1.00,
+                  descontoDoProduto: 0.5)),
+          VendaItem(
+              quantidadeDeItens: 2,
+              produto: Produto(
+                  codigoDoProduto: 4,
+                  nomeDoProduto: 'Lápis',
+                  precoDoProduto: 2.00,
+                  descontoDoProduto: 0.5))
+        ]),
+        Venda(clientes: new Clientes(
+          nome: 'Rayssa Vitoria', 
+          cpf: '123.456.789-00'),
+        itens: <VendaItem>[
+          VendaItem(
             quantidadeDeItens: 10,
             produto: Produto(
-                codigoDoProduto: 1,
-                nomeDoProduto: 'Caneta Bic',
-                precoDoProduto: 3.00,
-                descontoDoProduto: 0.5)),
-        VendaItem(
-            quantidadeDeItens: 2,
-            produto: Produto(
-                codigoDoProduto: 2,
-                nomeDoProduto: 'Caderno',
-                precoDoProduto: 20.00,
-                descontoDoProduto: 0.5)),
-        VendaItem(
-            quantidadeDeItens: 3,
-            produto: Produto(
-                codigoDoProduto: 3,
-                nomeDoProduto: 'Borracha',
-                precoDoProduto: 1.00,
-                descontoDoProduto: 0.5)),
-        VendaItem(
-            quantidadeDeItens: 2,
-            produto: Produto(
-                codigoDoProduto: 4,
-                nomeDoProduto: 'Lápis',
-                precoDoProduto: 2.00,
-                descontoDoProduto: 0.5))
-      ]);
+              codigoDoProduto: 4, 
+              nomeDoProduto: 'Lápis', 
+              precoDoProduto: 2.00, 
+              descontoDoProduto: 0.5)),
+              VendaItem(
+                quantidadeDeItens: 10,
+                produto: Produto(
+                  codigoDoProduto: 3, 
+                  nomeDoProduto: 'Borracha', 
+                  precoDoProduto: 1.00, 
+                  descontoDoProduto: 0.5)),
+                  VendaItem(
+                    quantidadeDeItens: 2,
+                    produto: Produto(
+                      codigoDoProduto: 2, 
+                      nomeDoProduto: 'Caderno', 
+                      precoDoProduto: 20.00, 
+                      descontoDoProduto: 0.5))]
+        )
+  ];
 
-  print('=================================================');
+  // Itera sobre cada venda na lista de vendas
+  for (var venda in vendas) {
+    print('==========================================\n');
+    print('Cliente: ${venda.clientes.nome}');
+    print('CPF: ${venda.clientes.cpf}');
+    print('Itens comprados:');
+
+    // Itera sobre os itens da venda
+    for (var item in venda.itens) {
+      print(
+          '\nProduto: ${item.produto.nomeDoProduto}, Código: ${item.produto.codigoDoProduto}. '
+          '\nQuantidade: ${item.quantidadeDeItens}. '
+          '\nValor Unitário: R\$${item.produto.precoDoProduto.toStringAsFixed(2)}. '
+          'Valor com Desconto: R\$${item.produto.precoComDesconto.toStringAsFixed(2)}.');
+    }
+
+    print('\nValor Total da Venda: R\$${venda.valorTotal.toStringAsFixed(2)}');
+    
+  }
+}
+  /*
+    print('=================================================');
 
   //Exibe o nome e cpf do cliente
   print('Cliente ${venda.clientes.nome}');
@@ -76,5 +125,5 @@ void main() {
   print('Preço: R\$ ${venda.itens[3].produto.precoDoProduto}.');
 
   print('=================================================');
+   */
 
-}
