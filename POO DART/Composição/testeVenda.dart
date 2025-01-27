@@ -5,7 +5,9 @@ import './venda.dart';
 
 void main() {
   var venda = Venda(
-      clientes: new Clientes(nome: 'Thiago Gabriel', cpf: '123.456.789-10'),
+      clientes: new Clientes(
+        nome: 'Thiago Gabriel', 
+        cpf: '123.456.789-10'),
       itens: <VendaItem>[
         VendaItem(
             quantidadeDeItens: 10,
