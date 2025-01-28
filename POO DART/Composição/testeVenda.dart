@@ -6,9 +6,7 @@ import './venda.dart';
 void main() {
   var vendas = [
     Venda(
-        clientes: new Clientes(
-          nome: 'Thiago Gabriel', 
-          cpf: '123.456.789-10'),
+        clientes: new Clientes(nome: 'Thiago Gabriel', cpf: '123.456.789-10'),
         itens: <VendaItem>[
           VendaItem(
               quantidadeDeItens: 10,
@@ -39,32 +37,31 @@ void main() {
                   precoDoProduto: 2.00,
                   descontoDoProduto: 0.5))
         ]),
-        Venda(clientes: new Clientes(
-          nome: 'Rayssa Vitoria', 
-          cpf: '123.456.789-00'),
+    Venda(
+        clientes: new Clientes(nome: 'Rayssa Vitoria', cpf: '123.456.789-00'),
         itens: <VendaItem>[
           VendaItem(
-            quantidadeDeItens: 10,
-            produto: Produto(
-              codigoDoProduto: 4, 
-              nomeDoProduto: 'Lápis', 
-              precoDoProduto: 2.00, 
-              descontoDoProduto: 0.5)),
-              VendaItem(
-                quantidadeDeItens: 10,
-                produto: Produto(
-                  codigoDoProduto: 3, 
-                  nomeDoProduto: 'Borracha', 
-                  precoDoProduto: 1.00, 
+              quantidadeDeItens: 10,
+              produto: Produto(
+                  codigoDoProduto: 4,
+                  nomeDoProduto: 'Lápis',
+                  precoDoProduto: 2.00,
                   descontoDoProduto: 0.5)),
-                  VendaItem(
-                    quantidadeDeItens: 2,
-                    produto: Produto(
-                      codigoDoProduto: 2, 
-                      nomeDoProduto: 'Caderno', 
-                      precoDoProduto: 20.00, 
-                      descontoDoProduto: 0.5))]
-        )
+          VendaItem(
+              quantidadeDeItens: 10,
+              produto: Produto(
+                  codigoDoProduto: 3,
+                  nomeDoProduto: 'Borracha',
+                  precoDoProduto: 1.00,
+                  descontoDoProduto: 0.5)),
+          VendaItem(
+              quantidadeDeItens: 2,
+              produto: Produto(
+                  codigoDoProduto: 2,
+                  nomeDoProduto: 'Caderno',
+                  precoDoProduto: 20.00,
+                  descontoDoProduto: 0.5))
+        ])
   ];
 
   // Itera sobre cada venda na lista de vendas
@@ -84,7 +81,6 @@ void main() {
     }
 
     print('\nValor Total da Venda: R\$${venda.valorTotal.toStringAsFixed(2)}');
-    
   }
 }
   /*
